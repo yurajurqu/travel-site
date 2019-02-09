@@ -6,7 +6,11 @@ nested=require('postcss-nested'),
 cssimport=require('postcss-import');
 
 gulp.task('styles',function(){
-    gulp.src('./app/assets/styles/styles.css')
+   return  gulp.src('./app/assets/styles/styles.css')
     .pipe(postcss([cssimport,cssvars,nested,autoprefixer]))
+    .on('error',function(errorInfo){
+        console.log(errorInfo.toString());
+        this.emit('end');
+    })
     .pipe(gulp.dest('./app/temp/styles'));
 });
