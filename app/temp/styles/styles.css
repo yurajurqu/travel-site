@@ -1,0 +1,15 @@
+body{
+    color:#2f5572;
+    background-color: yellow;
+    -webkit-columns:300px 2;
+            columns:300px 2;
+}
+
+.box a{
+        display:block;
+        padding:10px;
+    }
+
+.box div{
+        display: inline-block;
+    }
